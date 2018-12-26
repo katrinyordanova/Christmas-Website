@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ user.firstName }}
+    {{ user.lastName }}
+    {{ user.email }}
+    {{ user.address }}
+    {{ user.number }}
+
+    <div>
+    <a href="{{ path('admin_delete', {'id':user.id}) }}" class="btn pull-right btn-danger btn-xs" >delete &raquo;</a>
+    <a href="{{ path('admin_allUsers') }}" class="btn pull-right btn-default btn-xs">back &raquo;</a></div>
+{% endblock %}
+
