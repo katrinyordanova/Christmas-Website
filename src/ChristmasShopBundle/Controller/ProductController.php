@@ -5,7 +5,6 @@ namespace ChristmasShopBundle\Controller;
 use ChristmasShopBundle\Entity\Category;
 use ChristmasShopBundle\Entity\Product;
 use ChristmasShopBundle\Form\ProductType;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
@@ -23,13 +22,12 @@ class ProductController extends Controller
 {
     /**
      * @Route("/", name="product_add")
-     * @ParamConverter("category", class="ChristmasShopBundle\Entity\Category")
      * @param Request $request
-     * @param Category $category
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function createProductAction(Request $request, Category $category)
+    public function createProductAction(Request $request)
     {
+        //exit;
         $product = new Product();
         $form = $this->createForm(ProductType::class, $product);
         $form->handleRequest($request);
@@ -70,6 +68,7 @@ class ProductController extends Controller
     public function editProductAction(Request $request, $id)
     {
         $product = $this->getDoctrine()->getRepository(Product::class)->find($id);
+
         if (null === $product) {
             return $this->redirectToRoute('homepage');
         }

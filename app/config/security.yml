@@ -13,6 +13,7 @@ security:
 
     # http://symfony.com/doc/current/book/security.html#firewalls-authentication
     firewalls:
+
         secured_area:
             # this firewall applies to all URLs
             pattern: ^/

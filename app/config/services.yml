@@ -5,6 +5,15 @@ parameters:
     app.path.product_images: /uploads/images/products
 
 services:
+    crv.authentication_success_handler:
+        class: ChristmasShopBundle\Security\AuthenticationSuccessHandler
+        arguments:
+        - "@security.http_utils"
+        - []
+        - "@session.flash_bag"
+
+        crv.authentication_failure_handler:
+            class: AppBundle\Security\AuthenticationFailedHandler
     # default configuration for services in *this* file
     _defaults:
         # automatically injects dependencies in your services

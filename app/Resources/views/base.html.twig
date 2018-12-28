@@ -84,6 +84,11 @@
 
 <div class="container body-container">
     {% block body %}
+    {% for flash_message in app.session.flashBag.get('success') %}
+        <div class="alert alert-success">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
         <div class="row">
             <div id="main" class="col-sm-9">
                 {% block main %}{% endblock %}

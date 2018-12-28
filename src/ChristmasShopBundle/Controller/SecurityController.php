@@ -4,7 +4,6 @@ namespace ChristmasShopBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
-
 class SecurityController extends Controller
 {
     /**
@@ -13,6 +12,7 @@ class SecurityController extends Controller
      */
     public function loginAction()
     {
+        $this->addFlash('success','Successful registration!');
         return $this->render('security/login.html.twig');
     }
 
@@ -22,6 +22,7 @@ class SecurityController extends Controller
      */
     public function logoutAction()
     {
+        $this->addFlash('success','Successful log out! We hope to see you again soon! :)');
         throw new \Exception('Logout failed');
     }
 }
