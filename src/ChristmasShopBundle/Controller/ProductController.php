@@ -90,7 +90,7 @@ class ProductController extends Controller
             }
 
             $product->setImage($imageName);
-            //var_dump($product);exit;
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->merge($product);
             $entityManager->flush();
@@ -107,7 +107,7 @@ class ProductController extends Controller
      * @Route("/delete/{id}", name="product_delete")
      * @param Request $request
      * @param $id
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function deleteProduct(Request $request, $id)
     {
@@ -121,7 +121,7 @@ class ProductController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() and $form->isValid()) {
-            $product->setImage(new File($this->getParameter('images_directory').'/'.$product->getImage()));
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($product);
             $entityManager->flush();
