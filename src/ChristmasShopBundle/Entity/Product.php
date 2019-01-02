@@ -58,7 +58,7 @@ class Product
     /**
      *  @var integer
      *
-     * @ORM\ManyToOne(targetEntity="ChristmasShopBundle\Entity\Category", inversedBy="product")
+     * @ORM\ManyToOne(targetEntity="ChristmasShopBundle\Entity\Category", inversedBy="products")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     private $category_id;
@@ -178,22 +178,6 @@ class Product
         $this->image = $image;
         return $this;
     }
-//
-//    /**
-//     * @return int
-//     */
-//    public function getCategory()
-//    {
-//        return $this->category;
-//    }
-//
-//    /**
-//     * @param int $category
-//     */
-//    public function setCategory($category)
-//    {
-//        $this->category = $category;
-//    }
 
     /**
      * @return int
@@ -210,6 +194,21 @@ class Product
     {
         $this->category_id = $category_id;
     }
-
+//
+//    /**
+//     * @return int
+//     */
+//    public function getCategory()
+//    {
+//        return $this->category;
+//    }
+//
+//    /**
+//     * @param int $category
+//     */
+//    public function setCategory($category)
+//    {
+//        $this->category = $category;
+//    }
 }
 

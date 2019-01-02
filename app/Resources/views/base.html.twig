@@ -52,12 +52,12 @@
                                     My Profile
                                 </a>
                             </li>
-                        {#<li>#}
-                        {#<a href="{{ path('article_create') }}">#}
-                        {#Favourites#}
-                        {#</a>#}
-                        {#</li>#}
-                        <li>
+                            <li>
+                                <a href="{{ path('user_favorite') }}">
+                                    Favorite products
+                                </a>
+                            </li>
+                            <li>
                             <li>
                                 <a href="{{ path('security_logout') }}">
                                     Logout
@@ -66,12 +66,12 @@
                         {% else %}
                             <li>
                                 <a href="{{ path('user_register') }}">
-                                    REGISTER
+                                    Register
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ path('security_login') }}">
-                                    LOGIN
+                                    Login
                                 </a>
                             </li>
                         {% endif %}

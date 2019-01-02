@@ -73,11 +73,6 @@ class ProductController extends Controller
             return $this->redirectToRoute('homepage');
         }
 
-        $currentUser = $this->getUser();
-
-        if (!$currentUser->isAdmin()) {
-
-        }
         $form = $this->createForm(ProductType::class, $product);
         $form->handleRequest($request);
 

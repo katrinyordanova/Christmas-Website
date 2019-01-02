@@ -12,7 +12,6 @@ class SecurityController extends Controller
      */
     public function loginAction()
     {
-        $this->addFlash('success','Successful registration!');
         return $this->render('security/login.html.twig');
     }
 

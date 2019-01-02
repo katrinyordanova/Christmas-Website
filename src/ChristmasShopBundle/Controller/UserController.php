@@ -51,6 +51,8 @@ class UserController extends Controller
             $entityManager->persist($user);
             $entityManager->flush();
 
+            $this->addFlash('success','Successful registration!');
+            //$this->get('session')->getFlashBag()->clear();
             return $this->redirectToRoute("security_login");
         }
         return $this->render('user/register.html.twig', ['form'=>$form->createView()]);
@@ -126,5 +128,14 @@ class UserController extends Controller
         $entityManager->flush();
 
         return $this->render('user/delete.html.twig',['form'=>$form->createView(),'user'=>$user]);
+    }
+
+    /**
+     * @Route("favorite/", name="user_favorite")
+     * @param $id
+     */
+    public function favoriteProduct($id)
+    {
+
     }
 }
