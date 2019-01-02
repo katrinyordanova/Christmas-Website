@@ -27,11 +27,10 @@ class ProductController extends Controller
      */
     public function createProductAction(Request $request)
     {
-        //exit;
         $product = new Product();
         $form = $this->createForm(ProductType::class, $product);
         $form->handleRequest($request);
-        //var_dump($product);exit;
+
         if ($form->isSubmitted()) {
             /** @var UploadedFile $image */
             $image=$form->getData()->getImage();
@@ -77,7 +76,20 @@ class ProductController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() and $form->isValid()) {
-            $product->setImage(new File($this->getParameter('images_directory').'/'.$product->getImage()));
+            /** @var UploadedFile $image */
+            $image=$form->getData()->getImage();
+            $imageName =md5(uniqid()).'.'. $image->getClientOriginalExtension();
+
+            try {
+                $image->move(
+                    $this->getParameter('images_directory'),
+                    $imageName
+                );
+            } catch (FileException $e) {
+                // ... handle exception if something happens during file upload
+            }
+
+            $product->setImage($imageName);
             //var_dump($product);exit;
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->merge($product);

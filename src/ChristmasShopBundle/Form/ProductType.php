@@ -3,6 +3,7 @@
 namespace ChristmasShopBundle\Form;
 
 use ChristmasShopBundle\Entity\Category;
+use ChristmasShopBundle\Entity\Product;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\CallbackTransformer;
@@ -20,21 +21,22 @@ class ProductType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class)
+            ->add('name', TextType::class, array('data_class' => null))
             ->add('category_id', EntityType::class,
                 ['class'=> Category::class,
-                    'choice_label' => 'name'])
-            ->add('price',MoneyType::class)
-            ->add('isInStock',TextType::class)
-            ->add('description',TextType::class)
-            ->add('image', FileType::class)
+                    'choice_label' => 'name',
+                    'placeholder' => ''])
+            ->add('price',MoneyType::class, array('data_class' => null))
+            ->add('isInStock',TextType::class, array('data_class' => null))
+            ->add('description',TextType::class, array('data_class' => null))
+            ->add('image', FileType::class, array('data_class' => null))
             ->add('submit', SubmitType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'ChristmasShopBundle\Entity\Product'
+            'data_class' => Product::class
         ));
     }
 }
