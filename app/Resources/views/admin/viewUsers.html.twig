@@ -2,16 +2,13 @@
 
 {% block body %}
     {% for user in users %}
-        <a href="{{ path('admin_user', {'id': user.id}) }}">{{ user.email }}</a>
+       <h2><a href="{{ path('admin_user', {'id': user.id}) }}" style="color: #161f29;">{{ user.email }}</a></h2>
         <footer>
             <div class="pull-right">
-                {#{% if app.getUser() and app.getUser().isAdmin() %}#}
                 <a href="{{ path('admin_delete', {'id':user.id}) }}" class="btn btn-danger btn-xs" >delete &raquo;</a>
-                {#{% endif %}#}
                 <a href="{{ path('homepage') }}" class="btn btn-default btn-xs">back &raquo;</a>
             </div>
         </footer>
-        <hr />
-    {% endfor %}
 
+    {% endfor %}
 {% endblock %}

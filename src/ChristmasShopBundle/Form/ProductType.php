@@ -26,7 +26,7 @@ class ProductType extends AbstractType
                 ['class'=> Category::class,
                     'choice_label' => 'name',
                     'placeholder' => ''])
-            ->add('price',MoneyType::class, array('data_class' => null))
+            ->add('price',NumberType::class, array('data_class' => null))
             ->add('isInStock',TextType::class, array('data_class' => null))
             ->add('description',TextType::class, array('data_class' => null))
             ->add('image', FileType::class, array('data_class' => null))

@@ -2,13 +2,11 @@
 
 namespace ChristmasShopBundle\Controller;
 
-use ChristmasShopBundle\Entity\Category;
 use ChristmasShopBundle\Entity\Product;
 use ChristmasShopBundle\Form\ProductType;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
-use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -51,11 +49,24 @@ class ProductController extends Controller
             $entityManager->persist($product);
             $entityManager->flush();
 
+            $this->addFlash('success','Successfully added a new product!');
             return $this->redirectToRoute('homepage');
         }
         return $this->render('product/addProduct.html.twig',
             ['form' => $form->createView(), 'product' => $product]);
 
+    }
+
+    /**
+     * @Route("/product/{id}", name="product_view")
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function viewProductAction($id)
+    {
+        $product=$this->getDoctrine()->getRepository(Product::class)->find($id);
+
+        return $this->render('product/viewProduct.html.twig',['product'=>$product]);
     }
 
     /**
@@ -109,7 +120,7 @@ class ProductController extends Controller
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function deleteProduct(Request $request, $id)
+    public function deleteProductAction(Request $request, $id)
     {
         $product = $this->getDoctrine()->getRepository(Product::class)->find($id);
 
@@ -121,7 +132,6 @@ class ProductController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() and $form->isValid()) {
-
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($product);
             $entityManager->flush();
@@ -129,7 +139,15 @@ class ProductController extends Controller
             // add a flash message when this is successful
             return $this->redirectToRoute('homepage');
         }
-
+        
         return $this->render('product/deleteProduct.html.twig', ['form' => $form->createView(), 'product' => $product]);
+    }
+
+    /**
+     * @Route("/order", name="product_order")
+     */
+    public function orderProductAction()
+    {
+
     }
 }

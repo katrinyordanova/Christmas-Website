@@ -18,7 +18,7 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 </head>
 
-<body id="{% block body_id %}{% endblock %}">
+<body id="{% block body_id %}{% endblock %}" style="background: url(https://i.pinimg.com/originals/e8/1f/4a/e81f4adbeffe2d927e34e8f1fb882510.jpg); background-size: 100% ;">
 
 {% block header %}
     <header>
@@ -82,23 +82,21 @@
     </header>
 {% endblock %}
 
-<div id="header">
-    <div id="top-bar"></div>
+{% block categories %}
+    {#<img src="https://media.giphy.com/media/7tdGCMxDlPESQ/giphy.gif" height="80" width="900" />#}
 
-    <!-- end .header --> </div>
-<div class="navigation-bar">
-    <div id="navigation-container" class="cf">
-        <ul>
-            <li><a href="#">Christmas Trees</a></li>
-            <li><a href="#">Toys for the tree</a></li>
-            <li><a href="#">Decorations for your home</a></li>
-            <li><a href="#">Costumes</a></li>
-        </ul>
+    <div class="navigation-bar">
+        <div id="navigation-container" class="cf">
+            <ul>
+                <li><a href="#">Christmas Trees</a></li>
+                <li><a href="#">Toys for the tree</a></li>
+                <li><a href="#">Decorations for your home</a></li>
+                <li><a href="#">Costumes</a></li>
+            </ul>
+        </div>
+
     </div>
-
-</div>
-
-
+{% endblock %}
 
 
 <div class="container body-container">

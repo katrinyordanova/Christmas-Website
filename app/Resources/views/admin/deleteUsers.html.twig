@@ -2,10 +2,10 @@
 
 {% block body %}
     <div class="container body-content span=8 offset=2">
-        <div class="well">
-            <form class="form-horizontal" action="{{ path('admin_delete', {id: user.id}) }}" method="post">
+        <div class="text-center">
+            <form class="form-horizontal" action="{{ path('admin_delete', {'id': user.id}) }}" method="post">
                 <fieldset>
-                    <legend>Login</legend>
+                    <legend>Delete user</legend>
                     <div class="form-group">
                         <label class="col-sm-4 control-label" for="user_firstName">First name</label>
                         <div class="col-sm-4 ">

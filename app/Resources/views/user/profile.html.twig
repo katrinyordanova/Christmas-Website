@@ -1,13 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    {{ user.firstName }}
-    {{ user.lastName }}
-    {{ user.email }}
-    {{ user.address }}
-    {{ user.number }}
+{% block main %}
+    <div class="container body-content span=8 offset=2">
+        <div class="">
+            <form class="form-horizontal" enctype="multipart/form-data" method="post">
+                <fieldset>
+                    <legend></legend>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="user_firstName">First name</label>
+                        <div class="col-sm-4 ">
+                            <input class="form-control" id="user_firstName" name="user[firstName]" value="{{ user.firstName }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="user_lastName">Last name</label>
+                        <div class="col-sm-4 ">
+                            <input class="form-control" id="user_lastName" name="user[lastName]" value="{{ user.lastName }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="user_email">Email</label>
+                        <div class="col-sm-4 ">
+                            <input class="form-control" id="user_email" name="user[email]" value="{{ user.email }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="user_address">Address</label>
+                        <div class="col-sm-4 ">
+                            <input class="form-control" id="user_address" name="user[address]" value="{{ user.address }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="user_number">Telephone number</label>
+                        <div class="col-sm-4 ">
+                            <input class="form-control" id="user_number" name="user[number]" value="{{ user.number }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-4 " >
+                            <a href="{{ path('user_edit', {'id':user.id}) }}" class="btn pull-left btn-success btn-sm">Edit &raquo;</a>
+                            <a href="{{ path('user_delete', {'id':user.id}) }}" class="btn pull-left btn-danger btn-sm" >Delete &raquo;</a>
+                            <a href="{{ path('homepage') }}" class="btn btn-default pull-left btn-sm">Back &raquo;</a>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
 
-    <a href="{{ path('user_edit', {'id':user.id}) }}" class="btn pull-right btn-success btn-xs">edit &raquo;</a>
-    <a href="{{ path('user_delete', {'id':user.id}) }}" class="btn pull-right btn-danger btn-xs" >delete &raquo;</a>
-    <a href="{{ path('homepage') }}" class="btn pull-right btn-default btn-xs">back &raquo;</a>
 {% endblock %}

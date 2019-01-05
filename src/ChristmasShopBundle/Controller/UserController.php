@@ -51,8 +51,6 @@ class UserController extends Controller
             $entityManager->persist($user);
             $entityManager->flush();
 
-            $this->addFlash('success','Successful registration!');
-            //$this->get('session')->getFlashBag()->clear();
             return $this->redirectToRoute("security_login");
         }
         return $this->render('user/register.html.twig', ['form'=>$form->createView()]);
@@ -62,7 +60,7 @@ class UserController extends Controller
      * @Route("/profile", name="user_profile")
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function profileAction()
+    public function profileViewAction()
     {
         $currentUserId=$this->getUser()->getId();
         $profile=$this->getDoctrine()
@@ -78,7 +76,7 @@ class UserController extends Controller
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function editAction(Request $request,$id)
+    public function editProfileAction(Request $request,$id)
     {
         $user=$this->getDoctrine()->getRepository(User::class)->find($id);
 
@@ -107,12 +105,12 @@ class UserController extends Controller
     }
 
     /**
-     * @Route("/delete/{id}", name="user_delete")
+     * @Route("/delete/{id}", name="user_delete" ,requirements={"name": ".+"})
      * @param Request $request
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function deleteAction(Request $request,$id)
+    public function deleteProfileAction(Request $request,$id)
     {
         $user=$this->getDoctrine()->getRepository(User::class)->find($id);
 
@@ -134,7 +132,7 @@ class UserController extends Controller
      * @Route("favorite/", name="user_favorite")
      * @param $id
      */
-    public function favoriteProduct($id)
+    public function favoriteProductAction($id)
     {
 
     }

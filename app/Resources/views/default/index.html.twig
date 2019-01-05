@@ -22,18 +22,19 @@
                         <small>
                            In Stock: {{ product.isInStock }}
                         </small>
+
                         <footer>
                             <div class="pull-right">
-                                <a class="btn btn-default btn-xs">
-                                    {% if app.user %}
                                     {% if is_granted('ROLE_ADMIN') %}
                                     <a href="{{ path('product_edit', {'id': product.id }) }}">Edit &raquo;</a>
                                     <a href="{{ path('product_delete', {'id': product.id }) }}">Delete &raquo;</a>
                                     {% endif %}
-                                   {#<a href="{{ path( '', {'id': article.id}) }}">Read more &raquo;</a>#}
-                                        <a href="">Order</a>
+
+                                    {% if app.user %}
+                                        {#<a href="{{ path( '', {'id': article.id}) }}">Read more &raquo;</a>#}
+                                        <a href="{{ path('product_order') }}">Order &raquo;</a>
                                     {% endif %}
-                                </a>
+                                {#</a>#}
                             </div>
                         </footer>
                 </div>
