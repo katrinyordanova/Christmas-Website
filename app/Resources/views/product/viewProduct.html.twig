@@ -1,48 +1,38 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container body-content span=8 offset=2">
-        <div class="text-center">
-            <form class="form-horizontal" enctype="multipart/form-data" action="{{ path('product_view', {'id': product.id}) }}" method="post">
-                <fieldset>
-                    <div class="form-group">
-                        <label class="col-sm-4 control-label" for="product_name">Name</label>
-                        <div class="col-sm-4 ">
-                            <input class="form-control" id="product_name" placeholder="Name" name="product[name]" value="{{ product.name }}">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-4 control-label" for="product_price">Price</label>
-                        <div class="col-sm-4 ">
-                            <input class="form-control" id="product_price" placeholder="Price" name="product[price]" value="{{ product.price }}">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-4 control-label" for="product_isInStock">In stock</label>
-                        <div class="col-sm-4 ">
-                            <input class="form-control" id="product_isInStock" placeholder="In stock" name="product[isInStock]" value="{{ product.isInStock }}">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-4 control-label" for="product_description">Description</label>
-                        <div class="col-sm-4 ">
-                            <input class="form-control" id="product_description" placeholder="Description" name="product[description]" value="{{ product.description }}">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-4 control-label" for="product_image">Image</label>
-                        <div class="col-sm-4 ">
-                            <input type="file" class="form-control" id="product_image" placeholder="Image" name="product[image]" value="{{ product.image }}">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-4 col-sm-offset-4" >
-                            <a class="btn btn-danger pull-left" href="{{ path('product_order') }}">Order</a>
-                        </div>
-                    </div>
-                </fieldset>
-            </form>
-        </div>
+    <div class="text-center">
+                <div class=" ">
+                    <form>
+                    <header>
+                        <h2>{{ product.name }}</h2>
+                    </header>
+                    </form>
+                    <p>
+                        <a href="{{ path('product_view',{'id': product.id}) }}"><img src="{{ asset('uploads/images/' ~ product.image) }}" width="300" height="150"></a>
+                    </p>
+
+                    <p>
+                        Price: {{ product.price }} lv.
+                    </p>
+
+                    <p>
+                        In Stock: {{ product.isInStock }}
+                    </p>
+
+                    <p>
+                        Description: {{ product.description }}
+                    </p>
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a class="btn btn-success text-center" href="{{ path('product_edit', {'id': product.id }) }}">Edit &raquo;</a>
+                                <a class="btn btn-danger text-center" href="{{ path('product_delete', {'id': product.id }) }}">Delete &raquo;</a>
+                            {% endif %}
+
+                            {% if app.user %}
+                                <a class="btn btn-primary text-center" href="{{ path('product_order') }}">Order &raquo;</a>
+                            {% endif %}
+
+                </div>
     </div>
 {% endblock %}
 

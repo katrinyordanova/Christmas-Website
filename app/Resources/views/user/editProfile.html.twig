@@ -2,7 +2,6 @@
 
 {% block body %}
     <div class="container body-content span=8 offset=2">
-        <div class="">
             <form class="form-horizontal" action="{{ path('user_edit', {'id': user.id}) }}" method="post">
                 <fieldset>
                     <legend></legend>
@@ -47,6 +46,5 @@
                     {{  form_row(form._token) }}
                 </fieldset>
             </form>
-        </div>
     </div>
 {% endblock %}

@@ -54,11 +54,10 @@ class ProductController extends Controller
         }
         return $this->render('product/addProduct.html.twig',
             ['form' => $form->createView(), 'product' => $product]);
-
     }
 
     /**
-     * @Route("/product/{id}", name="product_view")
+     * @Route("/{id}", name="product_view")
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
      */

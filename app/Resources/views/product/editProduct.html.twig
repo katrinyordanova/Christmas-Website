@@ -1,13 +1,38 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="container body-content span=8 offset=2">
-    <div class="text-center">
-        <legend></legend>
-    {{ form_start(form) }}
-    {{ form_end(form) }}
+    <form class="form-horizontal" enctype="multipart/form-data" action="{{ path('product_edit', {'id': product.id}) }}" method="post">
+    <legend style="color: #0d1318">Edit the product</legend>
+    <hr/>
+
+    <div style="color: #0d1318" >
+        {{ form_row(form.name) }} {{ form(form.name) }}
     </div>
-</div>
+
+    <div style="color: #0d1318" >
+        {{ form_row(form.category_id) }} {{ form(form.category_id) }}
+    </div>
+
+    <div style="color: #0d1318" >
+        {{ form_row(form.price) }} {{ form(form.price) }}
+    </div>
+
+    <div style="color: #0d1318" >
+        {{ form_row(form.isInStock) }} {{ form(form.isInStock) }}
+    </div>
+
+    <div style="color: #0d1318" >
+        {{ form_row(form.description) }} {{ form(form.description) }}
+    </div>
+
+    <div style="color: #0d1318">
+        <input type="file" id="form_image" name="form[image]" />
+    </div>
+
+    <div  class="form-group">
+        <button type="submit" class="btn btn-primary pull-left">Edit</button>
+        <a href="{{ path('homepage') }}" class="btn btn-danger">Cancel</a>
+    </div>
     {#<div class="container body-content span=8 offset=2">#}
         {#<div class="well">#}
             {#<form class="form-horizontal" enctype="multipart/form-data" action="{{ path('product_edit', {'id': product.id}) }}" method="post">#}
