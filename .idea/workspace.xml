@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e567f519-2c72-482e-9af5-5a0af5d786a2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/product/addProduct.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/product/addProduct.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/product/deleteProduct.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/product/editProduct.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/product/editProduct.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/user/delete.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/user/delete.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChristmasShopBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChristmasShopBundle/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChristmasShopBundle/Controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChristmasShopBundle/Controller/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/user/profile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/user/profile.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +91,7 @@
           <entry key="json" value="1" />
           <entry key="php" value="159" />
           <entry key="sql" value="1" />
-          <entry key="twig" value="156" />
+          <entry key="twig" value="158" />
           <entry key="users" value="1" />
           <entry key="xml" value="1" />
           <entry key="yaml" value="2" />
@@ -116,7 +108,7 @@
           <entry key="PHP" value="159" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Scratch" value="1" />
-          <entry key="Twig" value="156" />
+          <entry key="Twig" value="158" />
           <entry key="XML" value="1" />
           <entry key="YAML" value="27" />
         </counts>
@@ -126,7 +118,7 @@
           <entry key="css" value="231" />
           <entry key="dummy" value="9" />
           <entry key="php" value="9666" />
-          <entry key="twig" value="5253" />
+          <entry key="twig" value="5364" />
           <entry key="yaml" value="8" />
           <entry key="yml" value="371" />
         </counts>
@@ -136,7 +128,7 @@
           <entry key="CSS" value="231" />
           <entry key="PHP" value="9666" />
           <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Twig" value="5253" />
+          <entry key="Twig" value="5364" />
           <entry key="YAML" value="379" />
         </counts>
       </usages-collector>
@@ -170,10 +162,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
+            <state relative-caret-position="255">
               <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
               <folding>
                 <element signature="n#style#0;n#header#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -181,6 +173,24 @@
                 <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#small#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/user/profile.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/product/viewProduct.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="31" column="57" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -277,7 +287,6 @@
         <option value="$PROJECT_DIR$/src/ChristmasShopBundle/Entity/Product.php" />
         <option value="$PROJECT_DIR$/src/ChristmasShopBundle/Controller/OrderController.php" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/user/profile.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/user/register.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/admin/deleteUsers.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/admin/singleUser.html.twig" />
@@ -297,6 +306,7 @@
         <option value="$PROJECT_DIR$/app/Resources/views/product/deleteProduct.html.twig" />
         <option value="$PROJECT_DIR$/src/ChristmasShopBundle/Controller/ProductController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/user/profile.html.twig" />
       </list>
     </option>
   </component>
@@ -565,12 +575,12 @@
       <workItem from="1546424480329" duration="13336000" />
       <workItem from="1546442110299" duration="10925000" />
       <workItem from="1546594378607" duration="15776000" />
-      <workItem from="1546684904938" duration="25608000" />
+      <workItem from="1546684904938" duration="27268000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="232696000" />
+    <option name="totallyTimeSpent" value="234356000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -582,7 +592,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19288956" />
@@ -783,13 +793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/viewProduct.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="57" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/viewUsers.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -832,13 +835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/user/profile.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -938,7 +934,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
+        <state relative-caret-position="255">
           <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
           <folding>
             <element signature="n#style#0;n#header#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -946,6 +942,20 @@
             <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#small#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/product/viewProduct.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="57" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/user/profile.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
         </state>
       </provider>
     </entry>
