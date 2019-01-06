@@ -3,10 +3,8 @@
 namespace ChristmasShopBundle\Controller;
 
 use ChristmasShopBundle\Entity\Product;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
-use ChristmasShopBundle\Entity\User;
 
 class DefaultController extends Controller
 {

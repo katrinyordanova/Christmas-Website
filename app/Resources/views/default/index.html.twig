@@ -7,32 +7,31 @@
             {% for product in products %}
                 <div class="col-md-4">
 
-                        <header>
+                        <header style="color: #0d1318">
                             <h2>{{ product.name }}</h2>
                         </header>
 
-                        <p>
+                        <p style="color: #0d1318">
                             <a href="{{ path('product_view',{'id': product.id}) }}"><img src="{{ asset('uploads/images/' ~ product.image) }}" width="300" height="150"></a>
                         </p>
 
-                        <p>
+                        <p style="color: #0d1318">
                            Price: {{ product.price }} lv.
                         </p>
 
-                        <small>
+                        <small style="color: #0d1318">
                            In Stock: {{ product.isInStock }}
                         </small>
 
                         <footer>
-                            <div class="pull-right">
+                            <div class="pull-right form-group">
                                     {% if is_granted('ROLE_ADMIN') %}
-                                    <a href="{{ path('product_edit', {'id': product.id }) }}">Edit &raquo;</a>
-                                    <a href="{{ path('product_delete', {'id': product.id }) }}">Delete &raquo;</a>
+                                    <a href="{{ path('product_edit', {'id': product.id }) }}" class="btn btn-success">Edit &raquo;</a>
+                                    <a href="{{ path('product_delete', {'id': product.id }) }}" class="btn btn-danger">Delete &raquo;</a>
                                     {% endif %}
 
                                     {% if app.user %}
-                                        {#<a href="{{ path( '', {'id': article.id}) }}">Read more &raquo;</a>#}
-                                        <a href="{{ path('product_order') }}">Order &raquo;</a>
+                                        <a href="{{ path('product_order') }}" class="btn btn-primary">Order &raquo;</a>
                                     {% endif %}
                                 {#</a>#}
                             </div>

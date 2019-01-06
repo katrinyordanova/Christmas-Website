@@ -127,19 +127,17 @@ class ProductController extends Controller
             return $this->redirectToRoute('homepage');
         }
 
-        $form = $this->createForm(ProductType::class, $product);
-        $form->handleRequest($request);
+//        $form = $this->createForm(ProductType::class, $product);
+//        $form->handleRequest($request);
 
-        if ($form->isSubmitted() and $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($product);
             $entityManager->flush();
 
             // add a flash message when this is successful
             return $this->redirectToRoute('homepage');
-        }
         
-        return $this->render('product/deleteProduct.html.twig', ['form' => $form->createView(), 'product' => $product]);
+        //return $this->render('product/deleteProduct.html.twig', ['form' => $form->createView(), 'product' => $product]);
     }
 
     /**
