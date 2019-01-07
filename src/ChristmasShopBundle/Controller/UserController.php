@@ -87,12 +87,6 @@ class UserController extends Controller
         $form=$this->createForm(UserType::class,$user);
         $form->handleRequest($request);
 
-//        /** @var User $currentUser */
-//        $currentUser=$this->getUser();
-
-//        if (!$currentUser->isAdmin() and !$currentUser->isAuthor($user)){
-//            return $this->redirectToRoute("blog_index");
-//        }
         if ($form->isSubmitted() and $form->isValid()) {
             $em=$this->getDoctrine()->getManager();
             $em->merge($user);
@@ -105,7 +99,7 @@ class UserController extends Controller
     }
 
     /**
-     * @Route("/delete/{id}", name="user_delete" ,requirements={"name": ".+"})
+     * @Route("/delete/{id}", name="user_delete")
      * @param Request $request
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response

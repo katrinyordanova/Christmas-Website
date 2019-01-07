@@ -3,9 +3,7 @@
 namespace ChristmasShopBundle\Controller;
 
 use ChristmasShopBundle\Entity\User;
-use ChristmasShopBundle\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -26,6 +24,7 @@ class AdminController extends Controller
 
     /**
      * @Route("/user/{id}", name="admin_user")
+     * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function viewSingleUser($id)
@@ -41,10 +40,9 @@ class AdminController extends Controller
     /**
      * @Route("/delete/{id}", name="admin_delete")
      * @param $id
-     * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function removeUserAction($id,Request $request)
+    public function removeUserAction($id)
     {
         $user=$this->getDoctrine()->getRepository(User::class)->find($id);
 

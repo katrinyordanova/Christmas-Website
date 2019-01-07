@@ -4,7 +4,6 @@ namespace ChristmasShopBundle\Controller;
 
 use ChristmasShopBundle\Entity\Product;
 use ChristmasShopBundle\Form\ProductType;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;

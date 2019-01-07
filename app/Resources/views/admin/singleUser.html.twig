@@ -6,40 +6,25 @@
             <form class="form-horizontal" enctype="multipart/form-data" method="post">
     <fieldset>
         <legend></legend>
-        <div class="form-group">
-            <label class="col-sm-4 control-label" for="user_firstName">First name</label>
-            <div class="col-sm-4 ">
-                <input class="form-control" id="user_firstName" name="user[firstName]" value="{{ user.firstName }}">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label" for="user_lastName">Last name</label>
-            <div class="col-sm-4 ">
-                <input class="form-control" id="user_lastName" name="user[lastName]" value="{{ user.lastName }}">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label" for="user_email">Email</label>
-            <div class="col-sm-4 ">
-                <input class="form-control" id="user_email" name="user[email]" value="{{ user.email }}">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label" for="user_address">Address</label>
-            <div class="col-sm-4 ">
-                <input class="form-control" id="user_address" name="user[address]" value="{{ user.address }}">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label" for="user_number">Telephone number</label>
-            <div class="col-sm-4 ">
-                <input class="form-control" id="user_number" name="user[number]" value="{{ user.number }}">
-            </div>
-        </div>
+        <legend></legend>
+        <h3 class="text-center">
+            First name: {{ user.firstName }}
+        </h3>
+        <h3 class="text-center">
+            Last name: {{ user.lastName }}
+        </h3>
+        <h3 class="text-center">
+            Email: {{ user.email }}
+        </h3>
+        <h3 class="text-center">
+            Address: {{ user.address }}
+        </h3> <h3 class="text-center">
+            Number: {{ user.number }}
+        </h3>
         <div class="form-group">
             <div class="col-sm-4 col-sm-offset-4 " >
-                <a href="{{ path('admin_delete', {'id':user.id}) }}" class="btn pull-left btn-danger btn-sm" >Delete &raquo;</a>
-                <a href="{{ path('admin_allUsers') }}" class="btn btn-default pull-left btn-sm">Back &raquo;</a>
+                <a href="{{ path('admin_delete', {'id':user.id}) }}" class="btn pull-right btn-danger btn-sm" >Delete &raquo;</a>
+                <a href="{{ path('admin_allUsers') }}" class="btn btn-default pull-right btn-sm">Back &raquo;</a>
             </div>
         </div>
     </fieldset>
