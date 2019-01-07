@@ -4,23 +4,27 @@
     <div class="text-center">
                 <div class=" ">
                     <form>
-                    <header>
+                    <header style="color: #0d1318">
                         <h2>{{ product.name }}</h2>
                     </header>
                     </form>
-                    <p>
-                        <a href="{{ path('product_view',{'id': product.id}) }}"><img src="{{ asset('uploads/images/' ~ product.image) }}" width="300" height="150"></a>
+                    <p style="color: #0d1318">
+                        <a href="{{ path('product_view',{'id': product.id}) }}"><img src="{{ asset('uploads/images/' ~ product.image) }}" width="" height=""></a>
                     </p>
 
-                    <p>
+                    <p style="color: #0d1318">
                         Price: {{ product.price }} lv.
                     </p>
 
-                    <p>
+                    <p style="color: #0d1318">
+                        Size: {{ product.size }} sm.
+                    </p>
+
+                    <p style="color: #0d1318">
                         In Stock: {{ product.isInStock }}
                     </p>
 
-                    <p>
+                    <p style="color: #0d1318">
                         Description: {{ product.description }}
                     </p>
                             {% if is_granted('ROLE_ADMIN') %}

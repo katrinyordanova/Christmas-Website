@@ -52,16 +52,10 @@ class AdminController extends Controller
             return $this->redirectToRoute('admin_allUsers');
         }
 
-        $form=$this->createForm(UserType::class,$user);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() and $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($user);
             $entityManager->flush();
-        }
 
-        return $this->render('admin/deleteUsers.html.twig',
-            ['form'=>$form->createView(), 'user'=>$user]);
+        return $this->redirectToRoute('admin_allUsers');
     }
 }

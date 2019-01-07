@@ -125,7 +125,9 @@ class UserController extends Controller
         $entityManager->remove($user);
         $entityManager->flush();
 
-        return $this->render('user/delete.html.twig',['form'=>$form->createView(),'user'=>$user]);
+        $this->get('security.token_storage')->setToken(null);
+
+        return $this->redirectToRoute('homepage');
     }
 
     /**

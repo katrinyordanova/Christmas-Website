@@ -61,7 +61,15 @@ class Product
      * @ORM\ManyToOne(targetEntity="ChristmasShopBundle\Entity\Category", inversedBy="products")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
-    private $category_id;
+    private $category;
+
+    /**
+     * @var string
+     *
+     * @ORM\ManyToOne(targetEntity="ChristmasShopBundle\Entity\Size", inversedBy="products")
+     * @ORM\JoinColumn(name="size_id", referencedColumnName="id")
+     */
+    private $size;
 
     /**
      * Get id
@@ -180,35 +188,35 @@ class Product
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getCategoryId()
+    public function getSize()
     {
-        return $this->category_id;
+        return $this->size;
     }
 
     /**
-     * @param int $category_id
+     * @param string $size
      */
-    public function setCategoryId($category_id)
+    public function setSize($size)
     {
-        $this->category_id = $category_id;
+        $this->size = $size;
     }
-//
-//    /**
-//     * @return int
-//     */
-//    public function getCategory()
-//    {
-//        return $this->category;
-//    }
-//
-//    /**
-//     * @param int $category
-//     */
-//    public function setCategory($category)
-//    {
-//        $this->category = $category;
-//    }
+
+    /**
+     * @return int
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param int $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
 }
 
