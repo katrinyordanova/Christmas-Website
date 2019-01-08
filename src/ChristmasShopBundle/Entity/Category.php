@@ -27,6 +27,7 @@ class Category
      */
     private $name;
 
+
     public function __toString()
     {
         return $this->name;
@@ -63,6 +64,22 @@ class Category
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSubcategoriesId()
+    {
+        return $this->subcategories_id;
+    }
+
+    /**
+     * @param int $subcategories_id
+     */
+    public function setSubcategoriesId($subcategories_id)
+    {
+        $this->subcategories_id = $subcategories_id;
     }
 }
 

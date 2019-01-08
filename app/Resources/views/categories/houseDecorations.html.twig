@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% for snowTree in snowTrees %}
+        <div class="col-md-4">
+
+            <header style="color: #0d1318">
+                <h2>{{ snowTree.name }}</h2>
+            </header>
+
+            <p style="color: #0d1318">
+                <a href="{{ path('product_view',{'id': snowTree.id}) }}"><img src="{{ asset('uploads/images/' ~ snowTree.image) }}" width="300" height="150"></a>
+            </p>
+
+            <p style="color: #0d1318">
+                Price: {{ snowTree.price }} lv.
+            </p>
+
+            <small style="color: #0d1318">
+                In Stock: {{ snowTree.isInStock }}
+            </small>
+
+            <footer>
+                <div class="pull-right form-group">
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a href="{{ path('product_edit', {'id': snowTree.id }) }}" class="btn btn-success">Edit &raquo;</a>
+                        <a href="{{ path('product_delete', {'id': snowTree.id }) }}" class="btn btn-danger">Delete &raquo;</a>
+                    {% endif %}
+
+                    {% if app.user %}
+                        <a href="{{ path('product_order') }}" class="btn btn-primary">Order &raquo;</a>
+                    {% endif %}
+                    </a>
+                </div>
+            </footer>
+        </div>
+    {% endfor %}
+{% endblock %}

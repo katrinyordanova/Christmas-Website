@@ -84,16 +84,16 @@
 
 {% block categories %}
 
-    {#<div class="navigation-bar">#}
-        {#<div id="navigation-container" class="cf">#}
-            {#<ul>#}
-                {#<li><a href="christmas">Christmas Trees</a></li>#}
-                {#<li><a href="#">Toys for the tree</a></li>#}
-                {#<li><a href="#">House decorations</a></li>#}
-                {#<li><a href="#">Costumes</a></li>#}
-            {#</ul>#}
-        {#</div>#}
-    {#</div>#}
+    <div class="navigation-bar">
+        <div id="navigation-container" class="cf">
+            <ul>
+                <li><a href="{{ path('christmas_tree') }}">Christmas Trees</a></li>
+                <li><a href="{{ path('tree_toys') }}">Toys for the tree</a></li>
+                <li><a href="{{ path('house_decorations') }}">House decorations</a></li>
+                <li><a href="{{ path('costumes') }}">Costumes</a></li>
+            </ul>
+        </div>
+    </div>
 {% endblock %}
 <legend></legend>
 

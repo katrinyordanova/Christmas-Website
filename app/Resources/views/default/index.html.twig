@@ -4,43 +4,7 @@
 
     <div class="container body-content">
         <div class="row">
-
             <img class="text-center" src="http://merrychristmassurprises.com/wp-content/uploads/2017/12/Merry-Christmas-GIF-Free-Download.gif" width="1150" height="460" />
-
-            {#{% for product in products %}#}
-                {#<div class="col-md-4">#}
-
-                        {#<header style="color: #0d1318">#}
-                            {#<h2>{{ product.name }}</h2>#}
-                        {#</header>#}
-
-                        {#<p style="color: #0d1318">#}
-                            {#<a href="{{ path('product_view',{'id': product.id}) }}"><img src="{{ asset('uploads/images/' ~ product.image) }}" width="300" height="150"></a>#}
-                        {#</p>#}
-
-                        {#<p style="color: #0d1318">#}
-                           {#Price: {{ product.price }} lv.#}
-                        {#</p>#}
-
-                        {#<small style="color: #0d1318">#}
-                           {#In Stock: {{ product.isInStock }}#}
-                        {#</small>#}
-
-                        {#<footer>#}
-                            {#<div class="pull-right form-group">#}
-                                    {#{% if is_granted('ROLE_ADMIN') %}#}
-                                    {#<a href="{{ path('product_edit', {'id': product.id }) }}" class="btn btn-success">Edit &raquo;</a>#}
-                                    {#<a href="{{ path('product_delete', {'id': product.id }) }}" class="btn btn-danger">Delete &raquo;</a>#}
-                                    {#{% endif %}#}
-
-                                    {#{% if app.user %}#}
-                                        {#<a href="{{ path('product_order') }}" class="btn btn-primary">Order &raquo;</a>#}
-                                    {#{% endif %}#}
-                                {#</a>#}
-                            {#</div>#}
-                        {#</footer>#}
-                {#</div>#}
-            {#{% endfor %}#}
         </div>
     </div>
 
